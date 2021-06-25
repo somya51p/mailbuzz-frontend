@@ -103,7 +103,10 @@
   cursor: pointer;
 }
 .btn:hover {
-  background-color: #6ec8a4;
+  background-color: whitesmoke;
+  color: #6ec8a4;
+  transform: scale(1.15);
+  transition: 0.5s;
 }
 .btn:focus {
   outline: none;

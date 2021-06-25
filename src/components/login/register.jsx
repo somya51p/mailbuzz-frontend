@@ -1,5 +1,5 @@
 import React from "react";
-import loginImg from "../../login.jpg";
+// import loginImg from "../../login.jpg";
 
 export class Register extends React.Component {
 
@@ -8,9 +8,9 @@ export class Register extends React.Component {
       <div className="base-container" ref={this.props.containerRef}>
         <div className="header">Register</div>
         <div className="content">
-          <div className="image">
+          {/* <div className="image">
             <img src={loginImg} alt="bg"/>
-          </div>
+          </div> */}
           <div className="form">
             <div className="form-group">
               <label htmlFor="username">Username</label>
