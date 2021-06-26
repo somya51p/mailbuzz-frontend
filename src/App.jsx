@@ -5,9 +5,12 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import SendMail from "./components/SendMail";
 import { Login, Register } from "./components/login/index";
+import History from "./components/History";
 import userServices from "./services/user";
 import Home from './components/Home';
+import mailServices from "./services/mail";
 import { Switch, Route, Link } from "react-router-dom";
+import Future from "./components/Future";
 
 const App = () => {
   const [isLogginActive, setIsLogginActive] = useState(true);
@@ -18,6 +21,8 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("root");
   const [showEditor, setShowEditor] = useState(false);
+  const [mails, setMails] = useState([]);
+  const [history, setHistory] = useState([]);
 
   useEffect(() => {
     setRightClass("right");
@@ -28,6 +33,26 @@ const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      console.log("geting mails");
+      getFutureMails(user).then((mails) => setMails(mails));
+      mailServices.getPast(user).then((mails) => setHistory(mails));
+    }
+  }, [user]);
+
+  const handleLogout = () => {
+    window.localStorage.removeItem("user");
+    // window.location.reload(false);
+    window.location.assign("/");
+  };
+
+  console.log("future", mails);
+  console.log("history", history);
+
+  const getFutureMails = async (user) => {
+    return await mailServices.getFuture(user);
+  };
   const handleLogin = async (event) => {
     console.log(username);
     console.log(password);
@@ -126,8 +151,18 @@ const App = () => {
       <div className="app__body">
         <Sidebar showEditor={showEditor} setShowEditor={setShowEditor} />
         <SendMail showEditor={showEditor} setShowEditor={setShowEditor} />
+        {/* <History history={history} /> */}
+        <Switch>
+          <Route path="/history">
+            <History history={history} />
+          </Route>
+          <Route path="/logout">{handleLogout}</Route>
+          <Route path="/">
+            <Future mails={mails} />
+          </Route>
+          <Route path="/home" exact component={Home}></Route>
+        </Switch>
       </div>
-      <Route path="/home" exact component={Home}></Route>
     </div>
   );
 };
