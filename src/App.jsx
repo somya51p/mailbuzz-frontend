@@ -155,7 +155,11 @@ const App = () => {
             showEditor={showEditor}
             setShowEditor={setShowEditor}
           />
-          <SendMail showEditor={showEditor} setShowEditor={setShowEditor} />
+          <SendMail
+            user={user}
+            showEditor={showEditor}
+            setShowEditor={setShowEditor}
+          />
           {/* <History history={history} /> */}
           <Route path="/history">
             <History history={history} />
