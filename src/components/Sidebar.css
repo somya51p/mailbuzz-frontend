@@ -7,6 +7,7 @@
 }
 
 .sidebar__compose {
+  width: 150px;
   margin-top: 15px !important;
   margin-left: 10px !important;
   margin-bottom: 15px !important;
@@ -18,6 +19,7 @@
 }
 
 .sidebar__history {
+  width: 150px;
   margin-top: 15px !important;
   margin-left: 10px !important;
   margin-bottom: 15px !important;
@@ -29,6 +31,7 @@
 }
 
 .sidebar__signout {
+  width: 150px;
   margin-top: 15px !important;
   margin-left: 10px !important;
   margin-bottom: 15px !important;
@@ -40,6 +43,7 @@
 }
 
 .sidebar__schedule {
+  width: 150px;
   margin-top: 15px !important;
   margin-left: 10px !important;
   margin-bottom: 15px !important;

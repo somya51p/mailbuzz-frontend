@@ -25,7 +25,7 @@ const Register = ({
       <div className="google">
         <img src={googleImg} alt="bg" />
         <button type="button" className="btn2" onClick={googleLogin}>
-          Login with Google
+          SignUp with Google
         </button>
       </div>
       <div className="header">Register</div>

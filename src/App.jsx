@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import SendMail from "./components/SendMail";
 import { Login, Register } from "./components/login/index";
 import userServices from "./services/user";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -114,6 +115,7 @@ const App = () => {
           <Header />
           <div className="app__body">
             <Sidebar />
+            <SendMail />
           </div>
       </div>
     
