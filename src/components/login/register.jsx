@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import googleImg from "../../google.png";
 
 const Register = () => {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -12,6 +13,12 @@ const Register = () => {
     <div
       className="base-container"
     >
+      <div className="google">
+        <img src={googleImg} alt="bg"/>
+        <button type="button" className="btn2">
+          Login with Google
+        </button>
+      </div>
       <div className="header">Register</div>
       <div className="content">
         <div className="form">

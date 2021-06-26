@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import loginImg from "../../login.jpg";
+import googleImg from "../../google.png";
 
 const Login = ({
   handleLogin,
@@ -16,6 +17,12 @@ const Login = ({
   };
   return (
     <div className="base-container">
+      <div className="google">
+        <img src={googleImg} alt="bg"/>
+        <button type="button" className="btn2">
+          Login with Google
+        </button>
+      </div>
       <div className="header">Login</div>
       <div className="content">
         <div className="image">

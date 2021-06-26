@@ -60,3 +60,25 @@
   margin-top: -55px;
   margin-left: 280px;
 }
+
+.base-container .google img {
+  position: fixed;
+  width: 2%;
+  height: 45px;
+}
+
+.base-container .google .btn2 {
+  font-size: 22px;
+  border: 0;
+  padding: 10px 40px;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.base-container .google .btn2:hover {
+  background-color: whitesmoke;
+  color: #6ec8a4;
+  transition: 0.5s;
+}
