@@ -1,59 +1,67 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Login, Register } from "./components/login/index";
+import loginServices from "./services/login";
 
 const App = () => {
   const [isLogginActive, setIsLogginActive] = useState(true);
   const [rightClass, setRightClass] = useState("");
+  const [user, setUser] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     setRightClass("right");
+    axios.get("/ping").then((res) => console.log(res.data));
   }, []);
 
-  // componentDidMount() {
-  //   //Add .right by default
-  //   this.rightSide.classList.add("right");
-  // }
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    console.log(username);
+    console.log(password);
+    try {
+      const newUser = await loginServices.login({
+        username,
+        password,
+      });
+      setUser(newUser);
+      setUsername("");
+      setPassword("");
+      console.log(newUser);
+      window.localStorage.setItem("user", JSON.stringify(newUser));
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
   const changeState = () => {
     isLogginActive ? setRightClass("left") : setRightClass("right");
-    // if (isLogginActive) {
-    //   rightSide.classList.remove("right");
-    //   rightSide.classList.add("left");
-    // } else {
-    //   rightSide.classList.remove("left");
-    //   rightSide.classList.add("right");
-    // }
-    // this.setState(prevState => ({ isLogginActive: !prevState.isLogginActive }));
-    console.log(rightClass);
     setIsLogginActive(!isLogginActive);
   };
 
   const current = isLogginActive ? "Register" : "Login";
   const currentActive = isLogginActive ? "login" : "register";
+
   return (
     <div className="App">
       <div className="login">
-        <div
-          className="container"
-          // ref={(ref) => (this.container = ref)}
-        >
+        <div className="container">
           {isLogginActive && (
             <Login
-            // containerRef={(ref) => (this.current = ref)}
+              handleLogin={handleLogin}
+              username={username}
+              password={password}
+              setUsername={setUsername}
+              setPassword={setPassword}
             />
           )}
-          {!isLogginActive && (
-            <Register
-            //  containerRef={(ref) => (this.current = ref)}
-            />
-          )}
+          {!isLogginActive && <Register />}
         </div>
         <RightSide
           className={rightClass}
           current={current}
           currentActive={currentActive}
-          // containerRef={(ref) => (this.rightSide = ref)}
           onClick={changeState}
         />
       </div>
@@ -63,11 +71,7 @@ const App = () => {
 
 const RightSide = (props) => {
   return (
-    <div
-      className={`right-side ${props.className}`}
-      // ref={props.containerRef}
-      onClick={props.onClick}
-    >
+    <div className={`right-side ${props.className}`} onClick={props.onClick}>
       <div className="inner-container">
         <div className="text">{props.current}</div>
       </div>
