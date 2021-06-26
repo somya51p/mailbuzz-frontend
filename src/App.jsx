@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar";
 import SendMail from "./components/SendMail";
 import { Login, Register } from "./components/login/index";
 import userServices from "./services/user";
+import mailServices from "./services/mail";
 import { Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("root");
   const [showEditor, setShowEditor] = useState(false);
+  const [mails, setMails] = useState([]);
 
   useEffect(() => {
     setRightClass("right");
@@ -27,6 +29,17 @@ const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      console.log("geting mails");
+      getFutureMails(user).then((mails) => setMails(mails));
+    }
+  }, [user]);
+
+  const getFutureMails = async (user) => {
+    return await mailServices.getFuture(user);
+  };
+  console.log(mails);
   const handleLogin = async (event) => {
     console.log(username);
     console.log(password);
