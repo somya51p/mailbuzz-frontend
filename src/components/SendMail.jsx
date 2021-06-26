@@ -34,25 +34,17 @@ function SendMail() {
           placeholder="bcc"
           type="email"
         />        
-        {/* {errors.to && <p className="sendMail__error">To is required</p>} */}
         <input
           name="subject"
           placeholder="Subject"
           type="text"
         />
-        {/* {errors.subject && (
-          <p className="sendMail__error">Subject is required</p>
-        )} */}
         <input
           name="message"
           className="sendMail__message"
           placeholder="Message..."
           type="text"
         />
-        {/* {errors.message && (
-          <p className="sendMail__error">Message can't be empty</p>
-        )} */}
-
         <div className="sendMail__options">
           <Button
             className="sendMail__send"

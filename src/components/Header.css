@@ -8,12 +8,18 @@
 .header__left {
   display: flex;
   align-items: center;
+  padding: 10px;
 }
 
 .header__left > img {
   object-fit: contain;
   height: 60px;
   margin-left: 5px;
+}
+
+.header__left h3 {
+  padding: 8px;
+  font-weight: lighter;
 }
 
 .header__middle {

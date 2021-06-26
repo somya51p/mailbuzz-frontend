@@ -13,6 +13,9 @@ function Header() {
     <div className="header">
       <div className="header__left">
         <img src={emaillogo} alt="" />
+        <div>
+            <h3>Mailbuzz</h3>
+        </div>
       </div>
       <div className="header__middle">
         <SearchIcon />
