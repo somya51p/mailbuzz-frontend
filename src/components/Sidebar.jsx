@@ -3,6 +3,7 @@ import "./Sidebar.css";
 // import DuoIcon from "@material-ui/icons/Duo";
 // import PhoneIcon from "@material-ui/icons/Phone";
 import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 function Sidebar({ setShowEditor, showEditor }) {
   return (
@@ -10,9 +11,15 @@ function Sidebar({ setShowEditor, showEditor }) {
       <Button className="sidebar__compose" onClick={() => setShowEditor(true)}>
         Compose
       </Button>
-      <Button className="sidebar__history">History</Button>
-      <Button className="sidebar__schedule">Schedule Mails</Button>
-      <Button className="sidebar__signout">Sign Out</Button>
+      <Button component={Link} to="/history" className="sidebar__history">
+        History
+      </Button>
+      <Button component={Link} to="/" className="sidebar__schedule">
+        Schedule Mails
+      </Button>
+      <Button component={Link} to="/logout" className="sidebar__signout">
+        Sign Out
+      </Button>
 
       {/* <div className="sidebar__footer">
         <div className="sidebar__footerIcons">
