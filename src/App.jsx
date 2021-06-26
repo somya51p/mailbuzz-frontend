@@ -160,9 +160,9 @@ const App = () => {
           <Route path="/">
             <Future mails={mails} />
           </Route>
-          <Route path="/home" exact component={Home}></Route>
         </Switch>
       </div>
+      <Route path="/home" exact component={Home}></Route>
     </div>
   );
 };
