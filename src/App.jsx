@@ -20,6 +20,10 @@ const App = () => {
   useEffect(() => {
     setRightClass("right");
     axios.get("/ping").then((res) => console.log(res.data));
+    const logedInUser = window.localStorage.getItem("user");
+    if (logedInUser) {
+      setUser(JSON.parse(logedInUser));
+    }
   }, []);
 
   const handleLogin = async (event) => {

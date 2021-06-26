@@ -8,12 +8,7 @@ const login = async (user) => {
 };
 
 const googleLogin = async () => {
-  // axios.create({
-  //   withCredentials: true,
-  // });
   await axios.get(`http://localhost:3000/login/google`);
-
-  // console.log(res);
 };
 
 const register = async (user) => {
