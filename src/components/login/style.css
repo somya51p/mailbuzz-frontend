@@ -64,13 +64,14 @@
 .base-container .google img {
   position: fixed;
   width: 2%;
-  height: 45px;
+  height: 46px;
+  padding-right: 10px;
 }
 
 .base-container .google .btn2 {
   font-size: 22px;
   border: 0;
-  padding: 10px 40px;
+  padding: 10px 45px;
   border-radius: 3px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
