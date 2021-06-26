@@ -168,7 +168,7 @@ const App = () => {
           <Route exact path="/">
             <Future mails={mails} />
           </Route>
-          </div>
+        </div>
       </Switch>
       <Route path="/home" exact component={Home}></Route>
     </div>
