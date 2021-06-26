@@ -2,7 +2,18 @@ import React from "react";
 import { useState } from "react";
 import googleImg from "../../google.png";
 
-const Register = () => {
+const Register = ({
+  googleLogin,
+  handleRegister,
+  username,
+  name,
+  email,
+  password,
+  setUsername,
+  setName,
+  setEmail,
+  setPassword,
+}) => {
   const [passwordShown, setPasswordShown] = useState(false);
 
   const togglePassword = () => {
@@ -10,12 +21,10 @@ const Register = () => {
   };
 
   return (
-    <div
-      className="base-container"
-    >
+    <div className="base-container">
       <div className="google">
-        <img src={googleImg} alt="bg"/>
-        <button type="button" className="btn2">
+        <img src={googleImg} alt="bg" />
+        <button type="button" className="btn2" onClick={googleLogin}>
           Login with Google
         </button>
       </div>
@@ -24,21 +33,49 @@ const Register = () => {
         <div className="form">
           <div className="form-group">
             <label htmlFor="username">Username</label>
-            <input type="text" name="username" placeholder="username" />
+            <input
+              type="text"
+              name="username"
+              placeholder="username"
+              onChange={({ target }) => setUsername(target.value)}
+              value={username}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="name"
+              onChange={({ target }) => setName(target.value)}
+              value={name}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="text" name="email" placeholder="email" />
+            <input
+              type="text"
+              name="email"
+              placeholder="email"
+              onChange={({ target }) => setEmail(target.value)}
+              value={email}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type={passwordShown ? "text" : "password"} name="password" placeholder="password" />
-            <i onClick={togglePassword} class="fa fa-eye teal-color" ></i>
+            <input
+              type={passwordShown ? "text" : "password"}
+              name="password"
+              placeholder="password"
+              value={password}
+              onChange={({ target }) => setPassword(target.value)}
+            />
+            <i onClick={togglePassword} class="fa fa-eye teal-color"></i>
           </div>
         </div>
       </div>
       <div className="footer">
-        <button type="button" className="btn">
+        <button type="button" className="btn" onClick={handleRegister}>
           Register
         </button>
       </div>
