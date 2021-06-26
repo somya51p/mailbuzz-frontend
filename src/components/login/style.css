@@ -62,7 +62,7 @@
 }
 
 .base-container .google img {
-  position: fixed;
+  position: absolute;
   width: 45px;
   height: 46px;
   padding-right: 10px;
