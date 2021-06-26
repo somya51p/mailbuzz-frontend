@@ -16,6 +16,7 @@ const App = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("root");
+  const [showEditor, setShowEditor] = useState(false);
 
   useEffect(() => {
     setRightClass("right");
@@ -122,8 +123,8 @@ const App = () => {
     <div className="app">
       <Header />
       <div className="app__body">
-        <Sidebar />
-        <SendMail />
+        <Sidebar showEditor={showEditor} setShowEditor={setShowEditor} />
+        <SendMail showEditor={showEditor} setShowEditor={setShowEditor} />
       </div>
     </div>
   );

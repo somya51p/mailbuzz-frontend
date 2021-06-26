@@ -4,30 +4,15 @@ import "./Sidebar.css";
 // import PhoneIcon from "@material-ui/icons/Phone";
 import { Button } from "@material-ui/core";
 
-function Sidebar() {
-
+function Sidebar({ setShowEditor, showEditor }) {
   return (
     <div className="sidebar">
-      <Button
-        className="sidebar__compose"
-      >
+      <Button className="sidebar__compose" onClick={() => setShowEditor(true)}>
         Compose
       </Button>
-      <Button
-        className="sidebar__history"
-      >
-        History
-      </Button>
-      <Button
-        className="sidebar__schedule"
-      >
-        Schedule Mails
-      </Button>
-      <Button
-        className="sidebar__signout"
-      >
-        Sign Out
-      </Button>
+      <Button className="sidebar__history">History</Button>
+      <Button className="sidebar__schedule">Schedule Mails</Button>
+      <Button className="sidebar__signout">Sign Out</Button>
 
       {/* <div className="sidebar__footer">
         <div className="sidebar__footerIcons">
@@ -41,9 +26,7 @@ function Sidebar() {
           </IconButton>
         </div>
       </div> */}
-      
     </div>
-    
   );
 }
 
