@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./SendMail.css";
 import CloseIcon from "@material-ui/icons/Close";
 import { Button } from "@material-ui/core";
@@ -40,7 +40,7 @@ function SendMail({ setShowEditor, showEditor, user }) {
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
   };
-  
+
   // const { editorState } = this.state;
 
   if (!showEditor) {
@@ -58,7 +58,7 @@ function SendMail({ setShowEditor, showEditor, user }) {
       </div>
 
       <form>
-      <input
+        <input
           value={to}
           onChange={({ target }) => setTo(target.value)}
           name="to"
@@ -87,24 +87,54 @@ function SendMail({ setShowEditor, showEditor, user }) {
           type="text"
         />
         <div>
-        <input
-          name="message"
-          className="sendMail__message"
-          placeholder="Message..."
-          type="text"
-          value={body}
-          onChange={({ target }) => setBody(target.value)}
-          // value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
-        />
-        <Editor
-          editorState={editorState}
-          toolbarClassName="toolbarClassName"
-          wrapperClassName="wrapperClassName"
-          editorClassName="editorClassName"
-          onEditorStateChange={onEditorStateChange}
-        />
+          <input
+            value={to}
+            onChange={({ target }) => setTo(target.value)}
+            name="to"
+            placeholder="To"
+            type="email"
+          />
+          <input
+            value={cc}
+            onChange={({ target }) => setCc(target.value)}
+            name="cc"
+            placeholder="Cc"
+            type="email"
+          />
+          <input
+            value={bcc}
+            onChange={({ target }) => setBcc(target.value)}
+            name="bcc"
+            placeholder="bcc"
+            type="email"
+          />
+          <input
+            value={subject}
+            onChange={({ target }) => setSubject(target.value)}
+            name="subject"
+            placeholder="Subject"
+            type="text"
+          />
+          <input
+            value={body}
+            onChange={({ target }) => setBody(target.value)}
+            name="message"
+            className="sendMail__message"
+            placeholder="Message..."
+            type="text"
+            value={body}
+            onChange={({ target }) => setBody(target.value)}
+            // value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
+          />
+          <Editor
+            editorState={editorState}
+            toolbarClassName="toolbarClassName"
+            wrapperClassName="wrapperClassName"
+            editorClassName="editorClassName"
+            onEditorStateChange={onEditorStateChange}
+          />
         </div>
-        
+
         <div className="sendMail__options">
           <Button
             className="sendMail__send"
