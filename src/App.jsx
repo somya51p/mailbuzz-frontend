@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar";
 import SendMail from "./components/SendMail";
 import { Login, Register } from "./components/login/index";
 import userServices from "./services/user";
+import Home from './components/Home';
 import { Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
@@ -126,6 +127,7 @@ const App = () => {
         <Sidebar showEditor={showEditor} setShowEditor={setShowEditor} />
         <SendMail showEditor={showEditor} setShowEditor={setShowEditor} />
       </div>
+      <Route path="/home" exact component={Home}></Route>
     </div>
   );
 };
