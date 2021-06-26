@@ -6,20 +6,25 @@ import Sidebar from "./components/Sidebar";
 import SendMail from "./components/SendMail";
 import { Login, Register } from "./components/login/index";
 import userServices from "./services/user";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
   const [isLogginActive, setIsLogginActive] = useState(true);
   const [rightClass, setRightClass] = useState("");
   const [user, setUser] = useState(null);
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("root");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("root");
+  const [showEditor, setShowEditor] = useState(false);
 
   useEffect(() => {
     setRightClass("right");
     axios.get("/ping").then((res) => console.log(res.data));
+    const logedInUser = window.localStorage.getItem("user");
+    if (logedInUser) {
+      setUser(JSON.parse(logedInUser));
+    }
   }, []);
 
   const handleLogin = async (event) => {
@@ -30,10 +35,10 @@ const App = () => {
         username,
         password,
       });
+      console.log(newUser);
       setUser(newUser);
       setUsername("");
       setPassword("");
-      console.log(newUser);
       window.localStorage.setItem("user", JSON.stringify(newUser));
     } catch (err) {
       console.error(err.message);
@@ -73,53 +78,55 @@ const App = () => {
   const current = isLogginActive ? "Register" : "Login";
   const currentActive = isLogginActive ? "login" : "register";
 
-  return (
-    <Router>
+  if (!user) {
+    return (
       <div className="App">
-      <div className="login">
-        <div className="container">
-          {isLogginActive && (
-            <Login
-              googleLogin={googleLogin}
-              handleLogin={handleLogin}
-              username={username}
-              password={password}
-              setUsername={setUsername}
-              setPassword={setPassword}
-            />
-          )}
-          {!isLogginActive && (
-            <Register
-              googleLogin={googleLogin}
-              handleRegister={handleRegister}
-              username={username}
-              setUsername={setUsername}
-              name={name}
-              setName={setName}
-              email={email}
-              setEmail={setEmail}
-              password={password}
-              setPassword={setPassword}
-            />
-          )}
+        <div className="login">
+          <div className="container">
+            {isLogginActive && (
+              <Login
+                googleLogin={googleLogin}
+                handleLogin={handleLogin}
+                username={username}
+                password={password}
+                setUsername={setUsername}
+                setPassword={setPassword}
+              />
+            )}
+            {!isLogginActive && (
+              <Register
+                googleLogin={googleLogin}
+                handleRegister={handleRegister}
+                username={username}
+                setUsername={setUsername}
+                name={name}
+                setName={setName}
+                email={email}
+                setEmail={setEmail}
+                password={password}
+                setPassword={setPassword}
+              />
+            )}
+          </div>
+          <RightSide
+            className={rightClass}
+            current={current}
+            currentActive={currentActive}
+            onClick={changeState}
+          />
         </div>
-        <RightSide
-          className={rightClass}
-          current={current}
-          currentActive={currentActive}
-          onClick={changeState}
-        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="app">
+      <Header />
+      <div className="app__body">
+        <Sidebar showEditor={showEditor} setShowEditor={setShowEditor} />
+        <SendMail showEditor={showEditor} setShowEditor={setShowEditor} />
       </div>
     </div>
-      <div className="app">
-          <Header />
-          <div className="app__body">
-            <Sidebar />
-            <SendMail />
-          </div>
-      </div>
-    
-    </Router>
   );
 };
 

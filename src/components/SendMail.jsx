@@ -3,11 +3,12 @@ import "./SendMail.css";
 import CloseIcon from "@material-ui/icons/Close";
 import { Button } from "@material-ui/core";
 
-function SendMail() {
-  
-  const onSubmit = (data) => {
+function SendMail({ setShowEditor, showEditor }) {
+  const onSubmit = (data) => {};
 
-  };
+  if (!showEditor) {
+    return null;
+  }
 
   return (
     <div className="sendMail">
@@ -15,30 +16,15 @@ function SendMail() {
         <h3>New Message</h3>
         <CloseIcon
           className="sendMail__close"
+          onClick={() => setShowEditor(false)}
         />
       </div>
 
       <form>
-        <input
-          name="to"
-          placeholder="To"
-          type="email"
-        />
-        <input
-          name="cc"
-          placeholder="Cc"
-          type="email"
-        />
-        <input
-          name="bcc"
-          placeholder="bcc"
-          type="email"
-        />        
-        <input
-          name="subject"
-          placeholder="Subject"
-          type="text"
-        />
+        <input name="to" placeholder="To" type="email" />
+        <input name="cc" placeholder="Cc" type="email" />
+        <input name="bcc" placeholder="bcc" type="email" />
+        <input name="subject" placeholder="Subject" type="text" />
         <input
           name="message"
           className="sendMail__message"
