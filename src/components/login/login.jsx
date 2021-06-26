@@ -4,6 +4,7 @@ import loginImg from "../../login.jpg";
 import googleImg from "../../google.png";
 
 const Login = ({
+  googleLogin,
   handleLogin,
   username,
   password,
@@ -18,8 +19,8 @@ const Login = ({
   return (
     <div className="base-container">
       <div className="google">
-        <img src={googleImg} alt="bg"/>
-        <button type="button" className="btn2">
+        <img src={googleImg} alt="bg" />
+        <button type="button" className="btn2" onClick={googleLogin}>
           Login with Google
         </button>
       </div>
