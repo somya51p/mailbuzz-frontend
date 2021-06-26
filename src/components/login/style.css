@@ -54,3 +54,9 @@
 .base-container .footer {
   margin-top: 3em;
 }
+
+.base-container .content .form .form-group .teal-color {
+  color: teal;
+  margin-top: -55px;
+  margin-left: 280px;
+}

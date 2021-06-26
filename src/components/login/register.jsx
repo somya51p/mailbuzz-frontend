@@ -1,17 +1,19 @@
 import React from "react";
-// import loginImg from "../../login.jpg";
+import { useState } from "react";
 
 const Register = () => {
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
   return (
     <div
       className="base-container"
-      // ref={this.props.containerRef}
     >
       <div className="header">Register</div>
       <div className="content">
-        {/* <div className="image">
-            <img src={loginImg} alt="bg"/>
-          </div> */}
         <div className="form">
           <div className="form-group">
             <label htmlFor="username">Username</label>
@@ -23,7 +25,8 @@ const Register = () => {
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="text" name="password" placeholder="password" />
+            <input type={passwordShown ? "text" : "password"} name="password" placeholder="password" />
+            <i onClick={togglePassword} class="fa fa-eye teal-color" ></i>
           </div>
         </div>
       </div>
