@@ -5,7 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import emaillogo from "../logo.jpg";
+import emaillogo from "../logo.png";
 
 function Header() {
 
