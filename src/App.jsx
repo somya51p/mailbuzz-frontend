@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 import { Login, Register } from "./components/login/index";
 import userServices from "./services/user";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
   const [isLogginActive, setIsLogginActive] = useState(true);
@@ -70,7 +73,8 @@ const App = () => {
   const currentActive = isLogginActive ? "login" : "register";
 
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <div className="login">
         <div className="container">
           {isLogginActive && (
@@ -106,6 +110,14 @@ const App = () => {
         />
       </div>
     </div>
+      <div className="app">
+          <Header />
+          <div className="app__body">
+            <Sidebar />
+          </div>
+      </div>
+    
+    </Router>
   );
 };
 
