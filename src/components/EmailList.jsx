@@ -17,18 +17,14 @@ import EmailRow from "./EmailRow";
 function EmailList() {
   const [emails, setEmails] = useState([]);
 
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="emailList">
       <div className="emailList__settings">
-        <div className="emailList__settingsLeft">
-          
-        </div>
+        <div className="emailList__settingsLeft"></div>
 
-        <div className="emailList__settingRight">
+        {/* <div className="emailList__settingRight">
           <IconButton>
             <ChevronLeftIcon />
           </IconButton>
@@ -44,7 +40,7 @@ function EmailList() {
           <IconButton>
             <SettingsIcon />
           </IconButton>
-        </div>
+        </div> */}
       </div>
 
       <div className="emailList__sections">
