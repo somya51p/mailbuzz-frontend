@@ -1,70 +1,113 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Title & Description
+### Mailbuzz
 
-## Available Scripts
+A web app build on MERN Stack where users can login and send recurring mails to the recipients.
 
-In the project directory, you can run:
+The features of the application are :
 
-### `yarn start`
+● Login and signup via 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    ○ Username - password 
+    ○ Gmail Sync (Login with Gmail option)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+● General Mail Features like :
 
-### `yarn test`
+    ○ To 
+    ○ CC 
+    ○ BCC
+    ○ Subject 
+    ○ Recurrence Method Selector
+    ○ Mail Body 
+    ○ Send Mail Button
+● One can schedule mails as 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ○ 30 seconds  
+    ○ Daily
+    ○ Weekly
+    ○ Monthly
+    ○ Yearly
+● Homepage
+    
+    ○ With the details of all future scheduled mails
 
-### `yarn build`
+● History
+    
+    ○ With the details of all mails sent till date
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+● Compose 
+    
+    ○ Feature to send a mail to recipients once.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+● Signout
+    
+    ○ With the feature to send a mail to recipients once.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deployed Link
 
-### `yarn eject`
+To run this project visit 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+  https://mailbuzz.netlify.app/
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  
+## Run Locally
+### Backend
+Clone the project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+  git clone https://github.com/abhishek-geek/mailbuzz-backend.git
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Go to the project directory
 
-## Learn More
+```bash
+  cd mailbuzz-backend
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm i
+```
 
-### Code Splitting
+Start the server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  npm run dev
+```
+### Frontend
+Clone the project
 
-### Analyzing the Bundle Size
+```bash
+  git clone https://github.com/somya51p/mailbuzz-frontend.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Go to the project directory
 
-### Making a Progressive Web App
+```bash
+  cd mailbuzz-frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Install dependencies
 
-### Advanced Configuration
+```bash
+  npm i
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Start the server
 
-### Deployment
+```bash
+  npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  
+  
+## Authors
 
-### `yarn build` fails to minify
+- [Abhishek Dubey](https://github.com/abhishek-geek)
+- [Somya Prajapati](https://github.com/somya51p)
+- [Abhijeet Singh](https://github.com/abhi178134)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
