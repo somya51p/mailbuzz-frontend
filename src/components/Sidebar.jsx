@@ -14,7 +14,7 @@ function Sidebar({ setShowEditor, showEditor, handleLogout }) {
       <Button component={Link} to="/history" className="sidebar__history">
         History
       </Button>
-      <Button component={Link} to="/" className="sidebar__schedule">
+      <Button component={Link} to="/home" className="sidebar__schedule">
         Schedule Mails
       </Button>
       <Button onClick={() => handleLogout()} className="sidebar__signout">
