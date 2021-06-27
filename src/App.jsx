@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import mailServices from "./services/mail";
 import { Switch, Route, Link } from "react-router-dom";
 import Future from "./components/Future";
+import Compose from "./components/Compose";
 
 const App = () => {
   const [isLogginActive, setIsLogginActive] = useState(true);
@@ -168,6 +169,9 @@ const App = () => {
           </Route>
           <Route exact path="/home">
             <Future mails={mails} />
+          </Route>
+          <Route exact path="/compose">
+            <Compose user={user} />
           </Route>
         </div>
       </div>
