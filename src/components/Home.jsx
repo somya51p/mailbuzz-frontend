@@ -1,4 +1,3 @@
-import { Opacity } from "@material-ui/icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import web from "../bg.jpeg";
@@ -23,7 +22,7 @@ const Home = () => {
                 <div></div>
               </div>
 
-              <a>Welcome To Mailbuzz</a>
+              <a href="/">Welcome To Mailbuzz</a>
             </nav>
             <div className="txt">
               <h1>
