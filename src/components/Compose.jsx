@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import "./Compose.css";
 
 function Compose({ user }) {
   // const [anchorEl, setAnchorEl] = React.useState(null);
@@ -81,9 +82,9 @@ function Compose({ user }) {
   // const { editorState } = this.state;
 
   return (
-    <div className="">
+    <div className="compose">
       {console.log("compose component")}
-      <div className="">
+      <div className="compose_header">
         <h3>Schedule New Recurring Email</h3>
       </div>
 
@@ -120,13 +121,14 @@ function Compose({ user }) {
           type="text"
         />
         <br />
-        <div>
+        <div className="schedule">
           <label for="schedule">Recurrence Method:</label>
 
           <select
             name="schedule"
             id="schedule"
             value={schedule}
+            className="method"
             onChange={({ target }) => setSchedule(target.value)}
           >
             <option value="recurring">Every 30 seconds</option>
@@ -151,11 +153,10 @@ function Compose({ user }) {
           />
         </div>
 
-        <div className="sendMail__options">
+        <div className="compose__options">
           <Button
-            className="sendMail__send"
+            className="compose__send"
             variant="contained"
-            color="primary"
             type="submit"
             onClick={handleSubmit}
           >
