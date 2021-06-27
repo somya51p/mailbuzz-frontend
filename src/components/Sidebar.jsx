@@ -1,14 +1,12 @@
 import React from "react";
 import "./Sidebar.css";
-// import DuoIcon from "@material-ui/icons/Duo";
-// import PhoneIcon from "@material-ui/icons/Phone";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-function Sidebar({ setShowEditor, showEditor, handleLogout }) {
+function Sidebar({ handleLogout }) {
   return (
     <div className="sidebar">
-      <Button className="sidebar__compose" onClick={() => setShowEditor(true)}>
+      <Button component={Link} to="/compose" className="sidebar__compose">
         Compose
       </Button>
       <Button component={Link} to="/history" className="sidebar__history">
@@ -20,19 +18,6 @@ function Sidebar({ setShowEditor, showEditor, handleLogout }) {
       <Button onClick={() => handleLogout()} className="sidebar__signout">
         Sign Out
       </Button>
-
-      {/* <div className="sidebar__footer">
-        <div className="sidebar__footerIcons">
-
-          <IconButton>
-            <DuoIcon />
-          </IconButton>
-
-          <IconButton>
-            <PhoneIcon />
-          </IconButton>
-        </div>
-      </div> */}
     </div>
   );
 }
