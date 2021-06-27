@@ -34,4 +34,15 @@ const modify = async (id, mail, user) => {
   return res.data;
 };
 
-export default { getFuture, getPast, modify };
+const add = async (mailObj, user) => {
+  console.log(mailObj);
+  const config = {
+    headers: {
+      Authorization: `bearer ${user.token}`,
+    },
+  };
+  const res = await axios.post(`/mails`, mailObj, config);
+  console.log(res.data);
+  return res.data;
+};
+export default { getFuture, getPast, modify, add };

@@ -5,7 +5,7 @@ import "./Sidebar.css";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-function Sidebar({ setShowEditor, showEditor }) {
+function Sidebar({ setShowEditor, showEditor, handleLogout }) {
   return (
     <div className="sidebar">
       <Button className="sidebar__compose" onClick={() => setShowEditor(true)}>
@@ -17,7 +17,7 @@ function Sidebar({ setShowEditor, showEditor }) {
       <Button component={Link} to="/" className="sidebar__schedule">
         Schedule Mails
       </Button>
-      <Button component={Link} to="/logout" className="sidebar__signout">
+      <Button onClick={() => handleLogout()} className="sidebar__signout">
         Sign Out
       </Button>
 

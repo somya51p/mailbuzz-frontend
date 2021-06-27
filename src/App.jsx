@@ -7,7 +7,7 @@ import SendMail from "./components/SendMail";
 import { Login, Register } from "./components/login/index";
 import History from "./components/History";
 import userServices from "./services/user";
-import Home from './components/Home';
+import Home from "./components/Home";
 import mailServices from "./services/mail";
 import { Switch, Route, Link } from "react-router-dom";
 import Future from "./components/Future";
@@ -43,8 +43,8 @@ const App = () => {
 
   const handleLogout = () => {
     window.localStorage.removeItem("user");
-    // window.location.reload(false);
-    window.location.assign("/");
+    window.location.reload(false);
+    // window.location.assign("/");
   };
 
   console.log("future", mails);
@@ -148,21 +148,31 @@ const App = () => {
   return (
     <div className="app">
       <Header />
-      <div className="app__body">
-        <Sidebar showEditor={showEditor} setShowEditor={setShowEditor} />
-        <SendMail showEditor={showEditor} setShowEditor={setShowEditor} />
-        {/* <History history={history} /> */}
-        <Switch>
+      <Switch>
+        <div className="app__body">
+          <Sidebar
+            handleLogout={handleLogout}
+            showEditor={showEditor}
+            setShowEditor={setShowEditor}
+          />
+          <SendMail
+            user={user}
+            showEditor={showEditor}
+            setShowEditor={setShowEditor}
+          />
+          {/* <History history={history} /> */}
           <Route path="/history">
             <History history={history} />
           </Route>
-          <Route path="/logout">{handleLogout}</Route>
+          {/* <Route path="/logout">{handleLogout()}</Route> */}
+          {/* <Route path="/home" exact>
+            <Home />
+          </Route> */}
           <Route path="/">
             <Future mails={mails} />
           </Route>
-        </Switch>
-      </div>
-      <Route path="/home" exact component={Home}></Route>
+        </div>
+      </Switch>
     </div>
   );
 };
