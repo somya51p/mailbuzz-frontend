@@ -49,7 +49,7 @@ const Login = ({
               value={password}
               onChange={({ target }) => setPassword(target.value)}
             />
-            <i onClick={togglePassword} class="fa fa-eye teal-color"></i>
+            <i onClick={togglePassword} className="fa fa-eye teal-color"></i>
           </div>
         </div>
       </div>
