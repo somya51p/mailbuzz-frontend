@@ -18,6 +18,14 @@ const Home = () => {
                 paddingTop:"50px"
               }}
           >   
+          <nav>
+        <div class="navicon">
+          <div></div>
+        </div>
+
+            <a>Welcome To Mailbuzz</a>
+
+        </nav>
           <div className="txt">
             <h1>
                 Feel Organized without the Effort with{" "}
@@ -25,8 +33,11 @@ const Home = () => {
             </h1>
             <div className="my-3">
                 <Link to="/">
-                <button className="btn btn-primary get-started mb-5">
-                  Get Started..
+                <button className="button">
+                  <div className="pattern">
+                    <div className="target inner bg4"></div>
+                  </div>
+                  <div className="text">Get Started</div>
                 </button>
                 </Link>
             </div>     
