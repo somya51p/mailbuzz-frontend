@@ -74,7 +74,7 @@ const Register = ({
           </div>
         </div>
       </div>
-      <div className="footer">
+      <div className="footerl">
         <button type="button" className="btn" onClick={handleRegister}>
           Register
         </button>

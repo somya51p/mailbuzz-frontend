@@ -2,6 +2,7 @@ import React from "react";
 import "./SendMail.css";
 import CloseIcon from "@material-ui/icons/Close";
 import { Button } from "@material-ui/core";
+import TextEditor from "./TextEditor";
 
 function SendMail({ setShowEditor, showEditor }) {
   const onSubmit = (data) => {};
@@ -31,6 +32,7 @@ function SendMail({ setShowEditor, showEditor }) {
           placeholder="Message..."
           type="text"
         />
+        <TextEditor />
         <div className="sendMail__options">
           <Button
             className="sendMail__send"
