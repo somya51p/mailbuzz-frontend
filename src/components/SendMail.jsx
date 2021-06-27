@@ -87,43 +87,6 @@ function SendMail({ setShowEditor, showEditor, user }) {
           type="text"
         />
         <input
-          value={body}
-          onChange={({ target }) => setBody(target.value)}
-          name="message"
-          className="sendMail__message"
-          placeholder="Message..."
-          type="text"
-        />
-        <div>
-          <input
-            value={to}
-            onChange={({ target }) => setTo(target.value)}
-            name="to"
-            placeholder="To"
-            type="email"
-          />
-          <input
-            value={cc}
-            onChange={({ target }) => setCc(target.value)}
-            name="cc"
-            placeholder="Cc"
-            type="email"
-          />
-          <input
-            value={bcc}
-            onChange={({ target }) => setBcc(target.value)}
-            name="bcc"
-            placeholder="bcc"
-            type="email"
-          />
-          <input
-            value={subject}
-            onChange={({ target }) => setSubject(target.value)}
-            name="subject"
-            placeholder="Subject"
-            type="text"
-          />
-          <input
             value={body}
             onChange={({ target }) => setBody(target.value)}
             name="message"
@@ -141,7 +104,7 @@ function SendMail({ setShowEditor, showEditor, user }) {
             editorClassName="editorClassName"
             onEditorStateChange={onEditorStateChange}
           />
-        </div>
+        
 
         <div className="sendMail__options">
           <Button
