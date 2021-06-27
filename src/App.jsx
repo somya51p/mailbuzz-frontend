@@ -9,9 +9,10 @@ import History from "./components/History";
 import userServices from "./services/user";
 import Home from "./components/Home";
 import mailServices from "./services/mail";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Future from "./components/Future";
 import Compose from "./components/Compose";
+axios.defaults.baseURL = "https://mailbuzz.herokuapp.com";
 
 const App = () => {
   const [isLogginActive, setIsLogginActive] = useState(true);

@@ -1,10 +1,7 @@
 import React, { useState , useEffect} from "react";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import mailServices from "../services/mail";
-import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
 import "./Compose.css";
 import {Helmet} from "react-helmet";
 
@@ -84,14 +81,14 @@ function Compose({ user }) {
     const mail = await mailServices.add(mailObj, user);
     console.log(mail);
   };
-  const [editorState, setEditorState] = useState("");
+  // const [editorState, setEditorState] = useState("");
   // state = {
   //   editorState: EditorState.createEmpty(),
   // };
 
-  const onEditorStateChange = (editorState) => {
-    setEditorState(editorState);
-  };
+  // const onEditorStateChange = (editorState) => {
+  //   setEditorState(editorState);
+  // };
 
   // const { editorState } = this.state;
 
@@ -136,7 +133,7 @@ function Compose({ user }) {
         />
         <br />
         <div className="schedule">
-          <label for="schedule">Recurrence Method:</label>
+          <label htmlFor="schedule">Recurrence Method:</label>
 
           <select
             name="schedule"
@@ -163,8 +160,6 @@ function Compose({ user }) {
             placeholder="Message..."
             type="text"
             contenteditable="true"
-            value={body}
-            onChange={({ target }) => setBody(target.value)}
             // value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
           />
           <div class="toolbar">

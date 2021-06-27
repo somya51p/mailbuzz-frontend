@@ -18,7 +18,7 @@
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.0.9",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -36,7 +36,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
@@ -45,5 +44,11 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3003"
+  "resolutions": {
+    "terser": "3.14.1"
+  },
+  "proxy": "https://mailbuzz.herokuapp.com",
+  "devDependencies": {
+    "terser": "^3.14.1"
+  }
 }
