@@ -168,7 +168,7 @@ const App = () => {
           {/* <Route path="/home" exact>
             <Home />
           </Route> */}
-          <Route path="/">
+          <Route exact path="/">
             <Future mails={mails} />
           </Route>
         </div>
