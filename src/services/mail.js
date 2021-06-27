@@ -1,5 +1,4 @@
 import axios from "axios";
-const baseUrl = "/mails";
 
 const getFuture = async (user) => {
   console.log(user);

@@ -3,9 +3,7 @@ import "./SendMail.css";
 import CloseIcon from "@material-ui/icons/Close";
 import { Button } from "@material-ui/core";
 import { Editor } from "react-draft-wysiwyg";
-import { EditorState, convertToRaw } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import draftToHtml from "draftjs-to-html";
 import mailServices from "../services/mail";
 
 function SendMail({ setShowEditor, showEditor, user }) {
@@ -87,15 +85,13 @@ function SendMail({ setShowEditor, showEditor, user }) {
           type="text"
         />
         <div>
-        <input
-            value={body}
+          <input
             onChange={({ target }) => setBody(target.value)}
             name="message"
             className="sendMail__message"
             placeholder="Message..."
             type="text"
             value={body}
-            onChange={({ target }) => setBody(target.value)}
             // value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
           />
           <Editor
@@ -105,7 +101,7 @@ function SendMail({ setShowEditor, showEditor, user }) {
             editorClassName="editorClassName"
             onEditorStateChange={onEditorStateChange}
           />
-        </div>       
+        </div>
 
         <div className="sendMail__options">
           <Button
