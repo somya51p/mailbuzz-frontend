@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import mailServices from "../services/mail";
 import { withStyles } from "@material-ui/core/styles";
@@ -6,8 +6,21 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import "./Compose.css";
+import {Helmet} from "react-helmet";
 
 function Compose({ user }) {
+
+  useEffect(() => {
+    const scriptTag = document.createElement('script');
+
+    scriptTag.src = "./resource.js";
+    scriptTag.async = true;
+
+    document.body.appendChild(scriptTag);
+    return () => {
+        document.body.removeChild(scriptTag);
+    }
+}, []);
   // const [anchorEl, setAnchorEl] = React.useState(null);
 
   // const handleClick = (event) => {
@@ -50,6 +63,7 @@ function Compose({ user }) {
   // }))(MenuItem);
 
   // mail object data
+  
   const [to, setTo] = useState("");
   const [cc, setCc] = useState("");
   const [bcc, setBcc] = useState("");
@@ -139,18 +153,88 @@ function Compose({ user }) {
           </select>
         </div>
 
-        <div>
+        <div className="application">
           <input
             value={body}
             onChange={({ target }) => setBody(target.value)}
             name="message"
-            className="sendMail__message"
+            className="compose__message"
+            id="output"
             placeholder="Message..."
             type="text"
+            contenteditable="true"
             value={body}
             onChange={({ target }) => setBody(target.value)}
             // value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
           />
+          <div class="toolbar">
+	<ul class="tool-list">
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command='justifyLeft'
+				class="tool--btn">
+				<i class=' fas fa-align-left'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command='justifyCenter' 
+				class="tool--btn">
+				<i class=' fas fa-align-center'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command="bold" 
+				class="tool--btn">
+				<i class=' fas fa-bold'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command="italic"
+				class="tool--btn">
+				<i class=' fas fa-italic'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command="underline"
+				class="tool--btn">
+				<i class=' fas fa-underline'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command="insertOrderedList"
+				class="tool--btn">
+				<i class=' fas fa-list-ol'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command="insertUnorderedList"
+				class="tool--btn">
+				<i class=' fas fa-list-ul'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command="createlink" 
+				class="tool--btn">
+				<i class=' fas fa-link'></i>
+			</button>
+		</li>
+	</ul>
+</div>
         </div>
 
         <div className="compose__options">
