@@ -12,6 +12,7 @@
     "cors": "^2.8.5",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
+    "http-proxy-middleware": "^1.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-draft-wysiwyg": "^1.14.7",
@@ -45,7 +46,6 @@
   "resolutions": {
     "terser": "3.14.1"
   },
-  "proxy": "https://mailbuzz.herokuapp.com",
   "devDependencies": {
     "terser": "^3.14.1"
   }

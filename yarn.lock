@@ -1848,6 +1848,13 @@
   "resolved" "https://registry.npmjs.org/@types/html-minifier-terser/-/html-minifier-terser-5.1.1.tgz"
   "version" "5.1.1"
 
+"@types/http-proxy@^1.17.4":
+  "integrity" "sha512-+qsjqR75S/ib0ig0R9WN+CDoZeOBU6F2XLewgC4KVgdXiNHiKKHFEMRHOrs5PbYE97D5vataw5wPj4KLYfUkuQ=="
+  "resolved" "https://registry.npmjs.org/@types/http-proxy/-/http-proxy-1.17.6.tgz"
+  "version" "1.17.6"
+  dependencies:
+    "@types/node" "*"
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   "integrity" "sha512-sz7iLqvVUg1gIedBOvlkxPlc8/uVzyS5OwGz1cKjXzkl3FpL3al0crU8YGU1WoHkxn0Wxbw5tyi6hvzJKNzFsw=="
   "resolved" "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz"
@@ -5912,6 +5919,17 @@
     "agent-base" "6"
     "debug" "4"
 
+"http-proxy-middleware@^1.0.6":
+  "integrity" "sha512-NyL6ZB6cVni7pl+/IT2W0ni5ME00xR0sN27AQZZrpKn1b+qRh+mLbBxIq9Cq1oGfmTc7BUq4HB77mxwCaxAYNg=="
+  "resolved" "https://registry.npmjs.org/http-proxy-middleware/-/http-proxy-middleware-1.0.6.tgz"
+  "version" "1.0.6"
+  dependencies:
+    "@types/http-proxy" "^1.17.4"
+    "http-proxy" "^1.18.1"
+    "is-glob" "^4.0.1"
+    "lodash" "^4.17.20"
+    "micromatch" "^4.0.2"
+
 "http-proxy-middleware@0.19.1":
   "integrity" "sha512-yHYTgWMQO8VvwNS22eLLloAkvungsKdKTLO8AJlftYIKNfJr3GK3zK0ZCfzDDGUBttdGc8xFy1mCitvNKQtC3Q=="
   "resolved" "https://registry.npmjs.org/http-proxy-middleware/-/http-proxy-middleware-0.19.1.tgz"
@@ -5922,7 +5940,7 @@
     "lodash" "^4.17.11"
     "micromatch" "^3.1.10"
 
-"http-proxy@^1.17.0":
+"http-proxy@^1.17.0", "http-proxy@^1.18.1":
   "integrity" "sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ=="
   "resolved" "https://registry.npmjs.org/http-proxy/-/http-proxy-1.18.1.tgz"
   "version" "1.18.1"

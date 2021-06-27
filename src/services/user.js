@@ -8,7 +8,9 @@ const login = async (user) => {
 };
 
 const googleLogin = async () => {
-  await axios.get(`login/google`);
+  const res = await axios.get(`login/google`);
+  console.log("gL", res.data);
+  return res.data;
 };
 
 const register = async (user) => {
