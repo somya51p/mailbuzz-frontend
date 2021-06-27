@@ -45,7 +45,7 @@
   "resolutions": {
     "terser": "3.14.1"
   },
-  "proxy": "http://localhost:3003",
+  "proxy": "https://mailbuzz.herokuapp.com",
   "devDependencies": {
     "terser": "^3.14.1"
   }
