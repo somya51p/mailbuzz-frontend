@@ -86,6 +86,7 @@ function SendMail({ setShowEditor, showEditor, user }) {
           placeholder="Subject"
           type="text"
         />
+        <div>
         <input
             value={body}
             onChange={({ target }) => setBody(target.value)}
@@ -104,7 +105,7 @@ function SendMail({ setShowEditor, showEditor, user }) {
             editorClassName="editorClassName"
             onEditorStateChange={onEditorStateChange}
           />
-        
+        </div>       
 
         <div className="sendMail__options">
           <Button

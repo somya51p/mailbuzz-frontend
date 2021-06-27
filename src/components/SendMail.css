@@ -53,8 +53,8 @@
 
 .sendMail__message {
   flex: 1;
-  height: 200px;
   width: 99%;
+  height: 150px;
 }
 
 .sendMail__error {

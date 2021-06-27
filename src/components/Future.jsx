@@ -12,7 +12,7 @@ function Future({ mails }) {
       </ul>
     );
   }
-  return <h1>No Scheduled mail to show!</h1>;
+  return <p>.</p>;
 }
 
 export default Future;
