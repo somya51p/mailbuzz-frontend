@@ -2,7 +2,6 @@ import { Opacity } from "@material-ui/icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import web from "../bg.jpeg";
-import Footer from "./Footer";
 import "./Home.css";
 
 const Home = () => {
@@ -45,7 +44,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </section>
   );
 };

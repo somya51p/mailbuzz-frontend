@@ -12,7 +12,6 @@
   height: 30px;
 }
 nav {
-  margin-top: 10px;
   width: 300px;
   background: white;
   color: rgba(0, 0, 0, 0.87);
@@ -99,7 +98,7 @@ a:active {
 }
 
 .home h1 {
-  margin-top: 10em;
+  margin-top: 5em;
   font-size: 2.5rem;
   font-weight: 600;
   color: aliceblue;
