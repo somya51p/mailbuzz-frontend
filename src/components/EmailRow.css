@@ -20,7 +20,7 @@
   display: flex;
   flex: 0.8;
   align-items: center;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .emailRow__message > h4 {
@@ -33,7 +33,7 @@
 }
 
 .emailRow__title {
-  font-size: 13px;
+  font-size: 16px;
   flex: 0.3;
   font-weight: bold;
 }
