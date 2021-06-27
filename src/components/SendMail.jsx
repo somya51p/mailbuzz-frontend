@@ -86,6 +86,14 @@ function SendMail({ setShowEditor, showEditor, user }) {
           placeholder="Subject"
           type="text"
         />
+        <input
+          value={body}
+          onChange={({ target }) => setBody(target.value)}
+          name="message"
+          className="sendMail__message"
+          placeholder="Message..."
+          type="text"
+        />
         <div>
           <input
             value={to}
