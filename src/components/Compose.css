@@ -1,7 +1,7 @@
 .compose {
   background-color: white;
   width: 50%;
-  height: 500px;
+  height: 650px;
   border: 2px solid #81c784;
   padding: 50px;
   margin: 20px;
@@ -36,7 +36,8 @@
   outline: none;
 }
 
-.sendMail__message {
+.compose__message {
+  margin-top: 10px;
   font-size: 16px;
   height: 100px;
   padding: 10px;
@@ -56,6 +57,7 @@
 }
 
 .compose__options .compose__send {
+  margin-top: 10px;
   background: #81c784;
   color: black;
   border-radius: 5px;
@@ -67,4 +69,21 @@
   border-radius: 5px;
   transition: 0.5s;
   transform: scale(1.1);
+}
+
+.toolbar .tool-list {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.tool .tool--btn {
+  display: block;
+  border: none;
+  padding: 0.5rem;
+  font-size: 20px;
 }
