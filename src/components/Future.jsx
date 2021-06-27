@@ -43,7 +43,7 @@ function Future({ mails }) {
               <StyledTableCell>Title</StyledTableCell>
               <StyledTableCell align="right">To</StyledTableCell>
               <StyledTableCell align="right">Body</StyledTableCell>
-              <StyledTableCell align="right">Schedule Date</StyledTableCell>
+              <StyledTableCell align="right">Scheduled Date</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
